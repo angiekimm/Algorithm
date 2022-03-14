@@ -2,6 +2,14 @@
 def solution(n, lost, reserve):
     answer = 0
     count = 0
+    lost.sort()
+    reserve.sort()
+    
+    for i in lost:
+        if i in reserve:
+            reserve.remove(i)
+            lost.remove(i)
+    
     for i in lost:
         if i in reserve:
             reserve.remove(i)
@@ -11,7 +19,7 @@ def solution(n, lost, reserve):
             reserve.remove(i+1)
         else:
             count = count + 1
-    
+            
     answer = n - count
         
     return answer
