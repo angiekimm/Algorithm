@@ -1,5 +1,5 @@
 # 단어 공부
-"""
+# solution 1
 import sys
 
 word = list(sys.stdin.readline().strip().upper())
@@ -25,12 +25,14 @@ else:
         print('?')
     else:
         print(sorted_counter[0][0])
-"""
+
+
+# solution 2
 import sys
 word = sys.stdin.readline().strip().upper()
 set_word = list(set(word))
 
-cnt_list = []
+cnt_list = [1, 4, 4, 1]
 for i in set_word:
     cnt = word.count(i)
     cnt_list.append(cnt)
