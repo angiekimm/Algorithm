@@ -3,7 +3,7 @@ const fs = require("fs");
 // console.log(process.cwd());
 const input = fs.readFileSync("input.txt").toString();
 
-let dial = {
+const dial = {
   ABC: 3,
   DEF: 4,
   GHI: 5,
