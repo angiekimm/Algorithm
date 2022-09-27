@@ -1,8 +1,10 @@
 // 손익분기점
-const input = require("fs").readFileSync("input.txt").toString().split(" ");
-const A = parseInt(input[0]);
-const B = parseInt(input[1]);
-const C = parseInt(input[2]);
+const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
+const [A, B, C] = require("fs")
+  .readFileSync(filePath)
+  .toString()
+  .split(" ")
+  .map(Number);
 
 // A 고정 비용 B 가변비용 C 노트북 가격
-A / (C - B) + 1 < 0 ? console.log("-1") : console.log(A / (C - B) + 1);
+C <= B?console.log("-1"):console.log(Math.floor(A / (C - B) + 1))
